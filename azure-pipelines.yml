@@ -11,6 +11,6 @@ steps:
 - task: Docker@2
   inputs:
     containerRegistry: 'ACRSubodh'
-    repository: 'pipelines-javascript-docker:v1'
+    repository: '$(imageName)'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
