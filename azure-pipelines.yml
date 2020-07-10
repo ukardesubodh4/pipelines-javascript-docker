@@ -14,3 +14,9 @@ steps:
     repository: $(imageName)
     command: build
     Dockerfile: app/Dockerfile
+
+- task: Docker@2
+  inputs:
+    containerRegistry: 'ACRSubodh'
+    repository: '$(imageName)'
+    command: 'push'
