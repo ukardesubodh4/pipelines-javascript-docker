@@ -9,14 +9,7 @@ variables:
 
 steps:
 - task: Docker@2
-  displayName: Build an image
-  inputs:
-    repository: 'acrsubodh.azurecr.io/$(imageName):$(build.buildnumber)'
-    command: build
-    Dockerfile: app/Dockerfile
-
-- task: Docker@2
   inputs:
     containerRegistry: 'ACRSubodh'
-    repository: 'acrsubodh.azurecr.io/$(imageName):$(build.buildnumber)'
-    command: 'push'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
